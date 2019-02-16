@@ -1,0 +1,49 @@
+{
+	"name": "authors-heaven",
+	"version": "1.0.0",
+	"description": "Medium for Uche",
+	"main": "index.js",
+	"scripts": {
+		"test": "cross-env NODE_ENV=test nyc --reporter=text mocha --timeout=3000 --recursive --exit",
+		"start": "nodemon --exec babel-node src/app.js",
+		"prestart": "npm run create-tables",
+		"create-tables": "babel-node src/config/initdb.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LordUche/authors-heaven.git"
+	},
+	"author": "Uchenna A. Iheanacho",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/LordUche/authors-heaven/issues"
+	},
+	"homepage": "https://github.com/LordUche/authors-heaven#readme",
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"cross-env": "^5.2.0",
+		"dotenv": "^6.2.0",
+		"express": "^4.16.4",
+		"nodemon": "^1.18.10",
+		"pg": "^7.8.0",
+		"sequelize": "^4.42.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.2.2",
+		"@babel/node": "^7.2.2",
+		"@babel/polyfill": "^7.2.5",
+		"@babel/preset-env": "^7.3.1",
+		"@babel/register": "^7.0.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.2.1",
+		"eslint": "^5.14.0",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-plugin-import": "^2.16.0",
+		"mocha": "^5.2.0",
+		"nyc": "^13.3.0"
+	},
+	"nyc": {
+		"require": ["@babel/register", "@babel/polyfill"]
+	}
+}
