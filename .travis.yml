@@ -4,5 +4,5 @@ node_js:
 services:
   - postgresql
 before_script:
-  - psql -c 'create database authors-heaven' -U postgres
+  - psql -c 'create database authors_heaven' -U postgres
   - npm run create-tables
